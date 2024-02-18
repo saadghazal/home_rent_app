@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:home_rent_app/onboarding/widgets/onboarding_cover.dart';
 import 'package:home_rent_app/utils/app_theme.dart';
+import 'package:home_rent_app/widgets/gradient_button.dart';
+import 'package:home_rent_app/widgets/main_button.dart';
 
 class OnBoardingScreen extends StatelessWidget {
   const OnBoardingScreen({super.key});
@@ -12,32 +15,7 @@ class OnBoardingScreen extends StatelessWidget {
         bottom: false,
         child: Column(
           children: [
-            SizedBox(
-              height: 508.h,
-              child: Stack(
-                children: [
-                  Image.asset(
-                    'assets/images/onboarding.png',
-                    height: 508.h,
-                  ),
-                  Image.asset(
-                    'assets/images/onboarding_overlay.png',
-                    height: 508.h,
-                  ),
-                  Align(
-                    alignment: Alignment.bottomCenter,
-                    child: Text(
-                      'New Place, New Home!',
-                      style: TextStyle(
-                        fontSize: 24.sp,
-                        fontWeight: FontWeight.bold,
-                        color: AppTheme.blueDark,
-                      ),
-                    ),
-                  )
-                ],
-              ),
-            ),
+            OnBoardingCover(),
             SizedBox(
               height: 8.h,
             ),
@@ -59,29 +37,9 @@ class OnBoardingScreen extends StatelessWidget {
             ),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 16.w),
-              child: Container(
-                height: 50.h,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(50.r),
-                  gradient: AppTheme.buttonGradient(),
-                  boxShadow: [
-                    BoxShadow(
-                      offset: Offset(0, 10),
-                      blurRadius: 20.r,
-                      color: AppTheme.mainColor.withOpacity(0.4),
-                    )
-                  ],
-                ),
-                child: Center(
-                  child: Text(
-                    'Login',
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
+              child: GradientButton(
+                label: 'Login',
+                onTap: () {},
               ),
             ),
             SizedBox(
@@ -89,26 +47,12 @@ class OnBoardingScreen extends StatelessWidget {
             ),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 16.w),
-              child: Container(
-                height: 50.h,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(50.r),
-                  color: Colors.white,
-                  border: Border.all(
-                    width: 0.8,
-                    color: Color(0xFFE3E3E7),
-                  ),
-                ),
-                child: Center(
-                  child: Text(
-                    'Sign Up',
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600,
-                      color: AppTheme.bonusColor,
-                    ),
-                  ),
-                ),
+              child: MainButton(
+                onTap: () {},
+                label: 'Sign Up',
+                backgroundColor: Colors.white,
+                labelColor: AppTheme.bonusColor,
+                borderColor: Color(0xFFE3E3E7),
               ),
             ),
           ],
