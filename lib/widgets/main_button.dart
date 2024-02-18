@@ -38,6 +38,7 @@ class MainButton extends StatelessWidget {
       child: Container(
         height: height.h,
         width: width.w,
+        padding: icon != null ? EdgeInsets.only(left: 16.w) : null,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(50.r),
           color: backgroundColor,
@@ -57,8 +58,10 @@ class MainButton extends StatelessWidget {
         ),
         child: icon != null
             ? Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   icon!,
+                  Spacer(),
                   Text(
                     label,
                     style: TextStyle(
@@ -66,6 +69,9 @@ class MainButton extends StatelessWidget {
                       fontWeight: FontWeight.w600,
                       color: labelColor,
                     ),
+                  ),
+                  Spacer(
+                    flex: 2,
                   ),
                 ],
               )

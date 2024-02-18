@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:home_rent_app/auth/screens/login_screen.dart';
 import 'package:home_rent_app/onboarding/screen/onboarding_screen.dart';
 
 void main() {
@@ -22,7 +23,10 @@ class MyApp extends StatelessWidget {
           fontFamily: 'SFProDisplay',
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         ),
-        home: OnBoardingScreen(),
+        routes: {
+          '/': (context) => OnBoardingScreen(),
+          LoginScreen.routeName: (context) => LoginScreen(),
+        },
       ),
     );
   }
