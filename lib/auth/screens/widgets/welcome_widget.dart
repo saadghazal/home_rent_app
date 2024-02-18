@@ -5,15 +5,19 @@ import '../../../utils/app_theme.dart';
 
 class WelcomeWidget extends StatelessWidget {
   const WelcomeWidget({
+    required this.title,
+    required this.description,
     super.key,
   });
+  final String title;
+  final String description;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         Text(
-          'Welcome Back!',
+          title,
           style: TextStyle(
             fontSize: 24.sp,
             fontWeight: FontWeight.bold,
@@ -24,7 +28,7 @@ class WelcomeWidget extends StatelessWidget {
           height: 8.h,
         ),
         Text(
-          'Log In to your Placoo account to explore your dream place to live across the whole world!',
+          description,
           textAlign: TextAlign.center,
           style: TextStyle(
             fontSize: 14.sp,

@@ -1,16 +1,18 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:home_rent_app/utils/app_theme.dart';
-import 'package:home_rent_app/widgets/gradient_button.dart';
-import 'package:home_rent_app/widgets/main_button.dart';
-import 'package:home_rent_app/widgets/main_text_field.dart';
-import 'package:home_rent_app/widgets/or_widget.dart';
 
+import '../../../utils/app_theme.dart';
+import '../../../widgets/gradient_button.dart';
+import '../../../widgets/main_button.dart';
+import '../../../widgets/main_text_field.dart';
+import '../../../widgets/or_widget.dart';
 import '../widgets/welcome_widget.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
-  static const routeName = '/login';
+class SignUpScreen extends StatelessWidget {
+  const SignUpScreen({super.key});
+
+  static const routeName = '/signup';
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +23,6 @@ class LoginScreen extends StatelessWidget {
       child: Scaffold(
         body: SingleChildScrollView(
           child: SafeArea(
-            bottom: false,
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 16.w),
               child: Column(
@@ -30,10 +31,10 @@ class LoginScreen extends StatelessWidget {
                   SizedBox(
                     height: 72.h,
                   ),
-                  const WelcomeWidget(
-                    title: 'Welcome Back!',
+                  WelcomeWidget(
+                    title: 'Let’s explore together!',
                     description:
-                        'Log In to your Placoo account to explore your dream place to live across the whole world!',
+                        'Create your Placoo account to explore your dream place to live across the whole world!',
                   ),
                   SizedBox(
                     height: 40.h,
@@ -85,10 +86,47 @@ class LoginScreen extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
+                    height: 18.h,
+                  ),
+                  Text(
+                    'Phone Number',
+                    style: TextStyle(
+                      color: AppTheme.blueDark,
+                      fontSize: 16.sp,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 8.h,
+                  ),
+                  MainTextField(
+                    label: 'Enter your phone number',
+                    borderColor: Color(0xFFE3E3E7),
+                    backgroundColor: Color(0xFFF2F2F3),
+                    isPassword: true,
+                    prefixWidget: Row(
+                      children: [
+                        CircleAvatar(
+                          radius: 10.r,
+                          backgroundImage: AssetImage('assets/images/jordan_flag.png'),
+                        ),
+                        SizedBox(
+                          width: 12.w,
+                        ),
+                        RotatedBox(
+                          quarterTurns: 3,
+                          child: Icon(
+                            Icons.arrow_back_ios_rounded,
+                            size: 15.sp,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
                     height: 28.h,
                   ),
                   GradientButton(
-                    label: 'Login',
+                    label: 'Create Account',
                     onTap: () {},
                   ),
                   SizedBox(

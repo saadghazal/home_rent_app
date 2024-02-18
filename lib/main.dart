@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home_rent_app/auth/screens/login/login_screen.dart';
+import 'package:home_rent_app/auth/screens/signup/sign_up_screen.dart';
 import 'package:home_rent_app/onboarding/screen/onboarding_screen.dart';
 
 void main() {
@@ -26,6 +27,7 @@ class MyApp extends StatelessWidget {
         routes: {
           '/': (context) => OnBoardingScreen(),
           LoginScreen.routeName: (context) => LoginScreen(),
+          SignUpScreen.routeName: (context) => SignUpScreen(),
         },
       ),
     );

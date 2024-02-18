@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home_rent_app/auth/screens/login/login_screen.dart';
+import 'package:home_rent_app/auth/screens/signup/sign_up_screen.dart';
 import 'package:home_rent_app/onboarding/widgets/onboarding_cover.dart';
 import 'package:home_rent_app/utils/app_theme.dart';
 import 'package:home_rent_app/widgets/gradient_button.dart';
@@ -57,7 +58,15 @@ class OnBoardingScreen extends StatelessWidget {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 16.w),
               child: MainButton(
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamedAndRemoveUntil(
+                    context,
+                    SignUpScreen.routeName,
+                    (Route a) {
+                      return false;
+                    },
+                  );
+                },
                 label: 'Sign Up',
                 backgroundColor: Colors.white,
                 labelColor: AppTheme.bonusColor,
