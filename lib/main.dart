@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:home_rent_app/onboarding/screen/onboarding_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,12 +16,13 @@ class MyApp extends StatelessWidget {
       designSize: const Size(375, 812),
       ensureScreenSize: true,
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         theme: ThemeData(
+          fontFamily: 'SFProDisplay',
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-          useMaterial3: true,
         ),
-        home: Scaffold(),
+        home: OnBoardingScreen(),
       ),
     );
   }
