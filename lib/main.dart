@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:home_rent_app/auth/screens/login_screen.dart';
+import 'package:home_rent_app/auth/screens/login/login_screen.dart';
 import 'package:home_rent_app/onboarding/screen/onboarding_screen.dart';
 
 void main() {
