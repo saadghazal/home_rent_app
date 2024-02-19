@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:home_rent_app/main/main_screen.dart';
 import 'package:home_rent_app/utils/app_theme.dart';
 import 'package:home_rent_app/widgets/gradient_button.dart';
 import 'package:home_rent_app/widgets/main_button.dart';
@@ -89,7 +90,9 @@ class LoginScreen extends StatelessWidget {
                   ),
                   GradientButton(
                     label: 'Login',
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.pushReplacementNamed(context, MainScreen.routeName);
+                    },
                   ),
                   SizedBox(
                     height: 12.h,
