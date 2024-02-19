@@ -8,6 +8,8 @@ class AppTheme {
   static const appOrange = Color(0xFFFFBF75);
   static const mainColor = Color(0xFF684DEC);
   static const navGrey2 = Color(0xFF7D7F88);
+  static const fieldBorder = Color(0xFFE3E3E7);
+  static const fieldFillColor = Color(0xFFF2F2F3);
 
   static LinearGradient buttonGradient() {
     return LinearGradient(
